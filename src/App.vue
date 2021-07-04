@@ -1,30 +1,62 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+
+    <div class="grid grid-cols-3 gap-4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <Dropdown :items="items">
+
+        </Dropdown>
+        
+    </div>
+     
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+
+import Dropdown from './components/Dropdown';
+
+export default {
+    name: 'App',
+    components: {
+        Dropdown
+    },
+    props: {
+
+    },
+    data: function(){
+        return {
+            items: [
+                { label: "First", children: [
+                    { label: "First-First" },
+                    { label: "First-Second" }
+                ]},
+                { label: "Second", children: [
+                    { label: "Second-First", children: [
+                        { label: "Second-First-First" },
+                        { label: "Second-First-Second" },
+                    ]},
+                    { label: "Second-Second", children: [
+                        { label: "Second-Second-First" },
+                        { label: "Second-Second-Second" }
+                    ]}
+                ]},
+                { label: "Third" } 
+            ]
+        }
+    }
 }
 
-#nav {
-  padding: 30px;
-}
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<style lang="scss">
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+
+
 </style>

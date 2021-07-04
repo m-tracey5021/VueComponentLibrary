@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply px-4 py-2 bg-blue-600 text-white rounded;
+    }
+
+    .dropdown-container {
+        @apply relative;
+    }
+
+    .dropdown {
+        @apply absolute p-0 mt-3 rounded-sm shadow;
+    }
+
+    .dropdown-item {
+        @apply flex flex-row justify-between items-center p-10 hover:bg-gray-200 cursor-pointer;
+    }
+
+    .dropdown-item-content {
+        @apply flex flex-row justify-evenly items-center mr-10;
+    }
+
+    .dropdown-item-icon {
+        @apply pr-2 mb-2;
+    }
+
+    .dropdown-item-label {
+        @apply whitespace-nowrap;
+    }
+
+
+}
