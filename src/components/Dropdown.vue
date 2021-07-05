@@ -1,11 +1,25 @@
 <template>
 
-    <div class="dropdown-container">
+    <!-- <div class="dropdown-container">
         <button class="btn" v-on:click="toggleDropdown">
             Dropdown
         </button>
         
         <ul v-if="displayDropdownData" class="dropdown">
+            <DropdownItem v-for="(item, index) in itemData" :key="item" :menuItemId="'' + index" :label="item.label" :icon="item.icon" :command="item.command" :children="item.children"/>
+        </ul>
+    </div> -->
+
+    <div class="dropdown-container">
+        <button class="btn" v-on:click="expandDropdown">
+            {{ textData }}
+        </button>
+        <!-- <div id="dropdown-wrapper" class="collapsed relative">
+            <ul id="dropdown" class="dropdown">
+                <DropdownItem v-for="(item, index) in itemData" :key="item" :menuItemId="'' + index" :label="item.label" :icon="item.icon" :command="item.command" :children="item.children"/>
+            </ul>
+        </div> -->
+        <ul class="dropdown">
             <DropdownItem v-for="(item, index) in itemData" :key="item" :menuItemId="'' + index" :label="item.label" :icon="item.icon" :command="item.command" :children="item.children"/>
         </ul>
     </div>
@@ -24,6 +38,10 @@ export default {
         DropdownItem
     },
     props: {
+        text: {
+            type: String,
+            default: "Select option"
+        },
         items: {
             type: Array,
             required: true
@@ -40,6 +58,17 @@ export default {
     methods: {
         toggleDropdown: function(){
             this.displayDropdownData = !this.displayDropdownData;
+        },
+        expandDropdown: function(){
+            // debugger;
+            var dropdownWrapper = document.getElementById('dropdown-wrapper');
+            if (dropdownWrapper.clientHeight){
+                dropdownWrapper.style.height = 0;
+            }else{
+                var dropdown = document.getElementById('dropdown');
+                var expandedHeight = dropdown.clientHeight + 15;
+                dropdownWrapper.style.height = expandedHeight + 'px';
+            }
         }
     }
 }
@@ -93,6 +122,14 @@ export default {
     left:       0; 
     position:   fixed; 
 } */
+
+.collapsed {
+    -moz-transition: height .25s;
+    -webkit-transition: height .25s;
+    transition: height .25s;
+    height: 0;
+    overflow: hidden;
+}
 
 
 </style>

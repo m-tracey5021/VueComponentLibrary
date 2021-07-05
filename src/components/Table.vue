@@ -144,7 +144,7 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
-.mt-tabel-col {
+.mt-table-col {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

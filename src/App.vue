@@ -33,21 +33,22 @@ export default {
     data: function(){
         return {
             items: [
-                { label: "First", children: [
-                    { label: "First-First" },
-                    { label: "First-Second" }
+                { label: "Alignment", icon: "fas fa-align-center", children: [
+                    { label: "Left" },
+                    { label: "Center" },
+                    { label: "Right" }
                 ]},
-                { label: "Second", children: [
-                    { label: "Second-First", children: [
-                        { label: "Second-First-First" },
-                        { label: "Second-First-Second" },
+                { label: "Notifications", icon: "far fa-bell", children: [
+                    { label: "Date Format", icon: "far fa-calendar", children: [
+                        { label: "DD-MM-YYYY (NZ)" },
+                        { label: "MM-DD-YYYY (US)" },
                     ]},
-                    { label: "Second-Second", children: [
-                        { label: "Second-Second-First" },
-                        { label: "Second-Second-Second" }
+                    { label: "Mode", icon: "far fa-envelope", children: [
+                        { label: "Email" },
+                        { label: "Text" }
                     ]}
                 ]},
-                { label: "Third" } 
+                { label: "Reset" } 
             ]
         }
     }

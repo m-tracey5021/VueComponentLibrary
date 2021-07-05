@@ -615,7 +615,7 @@ video {
 }
 
 .btn {
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
   padding-left: 1rem;
@@ -630,14 +630,75 @@ video {
   position: relative;
 }
 
+/* .dropdown-wrapper {
+        @apply relative;
+    } */
+
 .dropdown {
   position: absolute;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   border-radius: 0.125rem;
+  border-width: 1px;
   padding: 0px;
   --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
+.dropdown-item {
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+}
+
+.dropdown-item {
+  padding: 0.75rem;
+}
+
+.dropdown-item-content {
+  margin-right: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.dropdown-item-icon {
+  margin-right: 0.5rem;
+}
+
+.dropdown-item-label {
+  white-space: nowrap;
+}
+
+.dropdown-submenu-toggle {
+  position: relative;
+}
+
+/* .dropdown-submenu-wrapper {
+        @apply absolute h-0 -top-px left-full ml-0.5 transition-height duration-200 overflow-hidden;
+    } */
+
+.dropdown-submenu {
+  position: absolute;
+  top: -1px;
+  left: 100%;
+  margin-left: 0.125rem;
+  border-radius: 0.125rem;
+  border-width: 1px;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* .dropdown-submenu {
+        @apply border rounded-sm shadow;
+    } */
 
 .sr-only {
   position: absolute;
@@ -32161,6 +32222,12 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-height {
+  transition-property: height;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .delay-75 {
   transition-delay: 75ms;
 }
@@ -63323,6 +63390,12 @@ video {
 
   .sm\:transition-transform {
     transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .sm\:transition-height {
+    transition-property: height;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }
@@ -94490,6 +94563,12 @@ video {
     transition-duration: 150ms;
   }
 
+  .md\:transition-height {
+    transition-property: height;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
   .md\:delay-75 {
     transition-delay: 75ms;
   }
@@ -125649,6 +125728,12 @@ video {
 
   .lg\:transition-transform {
     transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .lg\:transition-height {
+    transition-property: height;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }
@@ -156816,6 +156901,12 @@ video {
     transition-duration: 150ms;
   }
 
+  .xl\:transition-height {
+    transition-property: height;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
   .xl\:delay-75 {
     transition-delay: 75ms;
   }
@@ -187979,6 +188070,12 @@ video {
     transition-duration: 150ms;
   }
 
+  .\32xl\:transition-height {
+    transition-property: height;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
   .\32xl\:delay-75 {
     transition-delay: 75ms;
   }
@@ -188059,3 +188156,4 @@ video {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+

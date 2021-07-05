@@ -3,25 +3,29 @@
 
 
     <li v-if="children.length == 0" v-on:click="triggerCommand" class="dropdown-item">
-        <div class="dropdown-tem-content">
+        <div class="dropdown-item-content">
             <i v-bind:class="iconData"></i>
             <div class="dropdown-item-label">{{ labelData }}</div>
         </div>
     </li> 
-    <li v-else v-on:mouseenter="displayChild" v-on:mouseleave="hideChild" class="mt-dropdown-submenu-toggle">
+    <li v-else v-on:mouseenter="displayChild" v-on:mouseleave="hideChild" class="dropdown-submenu-toggle">
         <div class="dropdown-item">
             <div class="dropdown-item-content">
                 <i v-bind:class="iconData"></i>
                 <div class="dropdown-item-label">{{ labelData }}</div>
             </div>
 
-            <i v-bind:id="menuItemIdData" class="fas fa-angle-right"></i>   
+            <i v-bind:id="'arrow-' + menuItemIdData" class="fas fa-angle-right"></i>   
 
         </div>
-        
-        <ul v-if="displayChildData" class="mt-dropdown-submenu">
-            <DropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.iconData" :command="child.command" :children="child.children"/>
+        <ul v-if="displayChildData" class="dropdown-submenu">
+            <DropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.icon" :command="child.command" :children="child.children"/>
         </ul>
+        <!-- <div v-bind:id="'dropdown-submenu-wrapper-' + menuItemIdData" class="dropdown-submenu-wrapper">
+            <ul v-bind:id="'dropdown-submenu-' + menuItemIdData" class="dropdown-submenu">
+                <DropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.icon" :command="child.command" :children="child.children"/>
+            </ul>
+        </div> -->
     </li>  
 
 </template>
@@ -53,6 +57,7 @@ export default {
         }
     },
     data: function(){
+        // debugger;
         return {
             menuItemIdData: this.menuItemId,
             labelData: this.label,
@@ -81,20 +86,37 @@ export default {
             this.$emit('childToggled');
         },
         displayChild: function(){
-            var arrow = document.getElementById(this.menuItemIdData).classList;
+            // debugger;
+            var arrow = document.getElementById('arrow-' + this.menuItemIdData).classList;
 
             arrow.remove('rotate-up');
             arrow.add('rotate-down');
-            
+            // var submenu = document.getElementById('dropdown-submenu-' + this.menuItemIdData);
+            // var submenuWrapper = document.getElementById('dropdown-submenu-wrapper-' + this.menuItemIdData);
+            // var expandedHeight = submenu.clientHeight + 15;
+            // submenuWrapper.style.height = expandedHeight + 'px';
             this.displayChildData = true;
         },
         hideChild: function(){
-            var arrow = document.getElementById(this.menuItemIdData).classList;
+            // debugger;
+            var arrow = document.getElementById('arrow-' + this.menuItemIdData).classList;
 
             arrow.add('rotate-up');
             arrow.remove('rotate-down');
-            
+            // var submenuWrapper = document.getElementById('dropdown-submenu-wrapper-' + this.menuItemIdData);
+            // submenuWrapper.style.height = 0;
             this.displayChildData = false;
+        },
+        expandSubmenu: function(){
+            // debugger;
+            var submenuWrapper = document.getElementById('dropdown-submenu-wrapper');
+            if (submenuWrapper.clientHeight){
+                submenuWrapper.style.height = 0;
+            }else{
+                var submenu = document.getElementById('dropdown-submenu');
+                var expandedHeight = submenu.clientHeight + 15;
+                submenuWrapper.style.height = expandedHeight + 'px';
+            }
         }
     },
     emits: ['itemSelected', 'childToggled']
@@ -153,6 +175,14 @@ export default {
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
+}
+
+.collapsed {
+    -moz-transition: height .25s;
+    -webkit-transition: height .25s;
+    transition: height .25s;
+    height: 0;
+    overflow: hidden;
 }
 
 .rotate-down {
