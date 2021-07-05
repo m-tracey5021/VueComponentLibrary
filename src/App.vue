@@ -1,7 +1,10 @@
 <template>
     
     <div class="flex flex-row w-64 h-64 border shadow">
-        <Dropdown :items="items"/>
+        <TieredDropdown :items="items"/>
+    </div>
+    <div class="flex flex-row w-64 h-64 border shadow">
+        <Button text="Button"/>
     </div>
     
         
@@ -9,12 +12,14 @@
 
 <script>
 
-import Dropdown from './components/Dropdown';
+import TieredDropdown from './components/TieredDropdown';
+import Button from './components/Button';
 
 export default {
     name: 'App',
     components: {
-        Dropdown
+        TieredDropdown,
+        Button
     },
     props: {
 

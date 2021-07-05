@@ -16,7 +16,7 @@
 import DropdownItem from './DropdownItem';
 
 export default {
-    name: 'Dropdown',
+    name: 'TieredDropdown',
     components: {
         DropdownItem
     },

@@ -4,7 +4,7 @@
 
 @layer components {
     .btn {
-        @apply px-4 py-2 bg-blue-600 text-white rounded-lg;
+        @apply px-4 py-2 max-h-7 max-w-md align-middle bg-white text-gray-500 border border-gray-500 rounded-md hover:bg-yellow-100 hover:text-black focus:bg-yellow-100 focus:text-black focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50;
     }
 
     .dropdown-container {
@@ -12,7 +12,7 @@
     }
     
     .dropdown {
-        @apply absolute p-0 mt-2 border rounded-sm shadow;
+        @apply absolute p-0 mt-1 border rounded-sm shadow;
     }
     
     .dropdown-item {
