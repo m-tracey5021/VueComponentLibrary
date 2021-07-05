@@ -643,13 +643,6 @@ video {
   transition-duration: 200ms;
 }
 
-<<<<<<< HEAD
-/* .dropdown {
-        @apply absolute p-0 mt-2 border rounded-sm shadow;
-    } */
-
-=======
->>>>>>> dropdownWithFade
 .dropdown {
   border-radius: 0.125rem;
   border-width: 1px;
@@ -694,15 +687,7 @@ video {
   position: relative;
 }
 
-<<<<<<< HEAD
-/* .dropdown-submenu {
-        @apply absolute -top-px left-full ml-0.5 border rounded-sm shadow;
-    } */
-
-.dropdown-submenu-wrapper {
-=======
 .dropdown-submenu {
->>>>>>> dropdownWithFade
   position: absolute;
   top: -1px;
   left: 100%;
