@@ -677,10 +677,6 @@ video {
   position: relative;
 }
 
-/* .dropdown-submenu {
-        @apply absolute -top-px left-full ml-0.5 border rounded-sm shadow;
-    } */
-
 .dropdown-submenu {
   position: absolute;
   top: -1px;
