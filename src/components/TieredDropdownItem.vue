@@ -19,7 +19,7 @@
 
         </div>
         <ul v-bind:id="'dropdown-submenu-' + menuItemIdData" class="dropdown-submenu">
-            <DropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.icon" :command="child.command" :children="child.children"/>
+            <TieredDropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.icon" :command="child.command" :children="child.children"/>
         </ul>
     </li>  
 
@@ -28,7 +28,7 @@
 <script>
 
 export default {
-    name: 'DropdownItem',
+    name: 'TieredDropdownItem',
     props: {
         menuItemId: {
             type: String,

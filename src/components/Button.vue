@@ -1,8 +1,12 @@
 <template>
+    <div class="btn-container">
+        <div id="btn-surround" class="btn-surround"></div>
+        <button id="btn" class="btn" v-on:click="pressed">
+            {{ textData }}
+            <!-- <div id="btn-surround" class="btn-surround"></div> -->
+        </button>
 
-    <button id="button" class="btn" type="button"  v-on:click="pressed">
-        {{ textData }}
-    </button>
+    </div>
 
 </template>
 
@@ -31,9 +35,9 @@ export default {
     },
     methods: {
         pressed: function(){
-            var button = document.getElementById('button');
-            button.addEventListener('animationend', function(){document.getElementById('button').classList.remove('ping');}, false);
-            document.getElementById('button').classList.add('ping');
+            var surround = document.getElementById('btn-surround');
+            surround.addEventListener('animationend', function(){surround.classList.remove('animate-small-ping');}, false);
+            surround.classList.add('animate-small-ping');
             this.commandData();
         },
     }

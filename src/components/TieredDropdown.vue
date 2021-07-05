@@ -1,11 +1,11 @@
 <template>
 
     <div class="dropdown-container">
-        <button class="btn" v-on:click="toggleDropdown">
+        <button class="btn-faded-yellow" v-on:click="toggleDropdown">
             {{ textData }}
         </button>
         <ul v-if="displayDropdownData" class="dropdown">
-            <DropdownItem v-for="(item, index) in itemData" :key="item" :menuItemId="'' + index" :label="item.label" :icon="item.icon" :command="item.command" :children="item.children"/>
+            <TieredDropdownItem v-for="(item, index) in itemData" :key="item" :menuItemId="'' + index" :label="item.label" :icon="item.icon" :command="item.command" :children="item.children"/>
         </ul>
     </div>
 
@@ -13,12 +13,12 @@
 
 <script>
 
-import DropdownItem from './DropdownItem';
+import TieredDropdownItem from './TieredDropdownItem';
 
 export default {
     name: 'TieredDropdown',
     components: {
-        DropdownItem
+        TieredDropdownItem
     },
     props: {
         text: {

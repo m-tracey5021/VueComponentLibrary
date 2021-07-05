@@ -1,13 +1,12 @@
 <template>
     
-    <div class="flex flex-row w-64 h-64 border shadow">
+    <div class="w-64 h-64 border shadow">
         <TieredDropdown :items="items"/>
     </div>
-    <div class="flex flex-row w-64 h-64 border shadow">
+    <div class="w-64 h-64 border shadow">
         <Button text="Button"/>
     </div>
     
-        
 </template>
 
 <script>
