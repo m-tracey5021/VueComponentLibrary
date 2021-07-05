@@ -18,14 +18,14 @@
             <i v-bind:id="'arrow-' + menuItemIdData" class="fas fa-angle-right"></i>   
 
         </div>
-        <ul v-if="displayChildData" class="dropdown-submenu">
+        <!-- <ul v-if="displayChildData" class="dropdown-submenu">
             <DropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.icon" :command="child.command" :children="child.children"/>
-        </ul>
-        <!-- <div v-bind:id="'dropdown-submenu-wrapper-' + menuItemIdData" class="dropdown-submenu-wrapper">
+        </ul> -->
+        <div v-bind:id="'dropdown-submenu-wrapper-' + menuItemIdData" class="dropdown-submenu-wrapper">
             <ul v-bind:id="'dropdown-submenu-' + menuItemIdData" class="dropdown-submenu">
                 <DropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.icon" :command="child.command" :children="child.children"/>
             </ul>
-        </div> -->
+        </div>
     </li>  
 
 </template>
@@ -91,11 +91,11 @@ export default {
 
             arrow.remove('rotate-up');
             arrow.add('rotate-down');
-            // var submenu = document.getElementById('dropdown-submenu-' + this.menuItemIdData);
-            // var submenuWrapper = document.getElementById('dropdown-submenu-wrapper-' + this.menuItemIdData);
-            // var expandedHeight = submenu.clientHeight + 15;
-            // submenuWrapper.style.height = expandedHeight + 'px';
-            this.displayChildData = true;
+            var submenu = document.getElementById('dropdown-submenu-' + this.menuItemIdData);
+            var submenuWrapper = document.getElementById('dropdown-submenu-wrapper-' + this.menuItemIdData);
+            var expandedHeight = submenu.clientHeight + 15;
+            submenuWrapper.style.height = expandedHeight + 'px';
+            // this.displayChildData = true;
         },
         hideChild: function(){
             // debugger;
@@ -103,9 +103,9 @@ export default {
 
             arrow.add('rotate-up');
             arrow.remove('rotate-down');
-            // var submenuWrapper = document.getElementById('dropdown-submenu-wrapper-' + this.menuItemIdData);
-            // submenuWrapper.style.height = 0;
-            this.displayChildData = false;
+            var submenuWrapper = document.getElementById('dropdown-submenu-wrapper-' + this.menuItemIdData);
+            submenuWrapper.style.height = 0;
+            // this.displayChildData = false;
         },
         expandSubmenu: function(){
             // debugger;

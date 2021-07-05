@@ -14,14 +14,14 @@
         <button class="btn" v-on:click="expandDropdown">
             {{ textData }}
         </button>
-        <!-- <div id="dropdown-wrapper" class="collapsed relative">
+        <div id="dropdown-wrapper" class="dropdown-wrapper">
             <ul id="dropdown" class="dropdown">
                 <DropdownItem v-for="(item, index) in itemData" :key="item" :menuItemId="'' + index" :label="item.label" :icon="item.icon" :command="item.command" :children="item.children"/>
             </ul>
-        </div> -->
-        <ul class="dropdown">
+        </div>
+        <!-- <ul class="dropdown">
             <DropdownItem v-for="(item, index) in itemData" :key="item" :menuItemId="'' + index" :label="item.label" :icon="item.icon" :command="item.command" :children="item.children"/>
-        </ul>
+        </ul> -->
     </div>
 
 
