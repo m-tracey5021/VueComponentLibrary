@@ -632,17 +632,6 @@ video {
   align-items: center;
 }
 
-.dropdown-wrapper {
-  margin-top: 0.5rem;
-  height: 0px;
-  overflow: hidden;
-  padding: 0px;
-  transition-property: height;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 200ms;
-}
-
 .dropdown {
   border-radius: 0.125rem;
   border-width: 1px;
@@ -692,15 +681,6 @@ video {
   top: -1px;
   left: 100%;
   margin-left: 0.125rem;
-  height: 0px;
-  overflow: hidden;
-  transition-property: height;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 200ms;
-}
-
-.dropdown-submenu {
   border-radius: 0.125rem;
   border-width: 1px;
   --tw-bg-opacity: 1;

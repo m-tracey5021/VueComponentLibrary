@@ -6,7 +6,7 @@
         </button>
         <ul v-if="displayDropdownData" class="dropdown">
             <DropdownItem v-for="(item, index) in itemData" :key="item" :menuItemId="'' + index" :label="item.label" :icon="item.icon" :command="item.command" :children="item.children"/>
-        </ul> -->
+        </ul>
     </div>
 
 </template>
