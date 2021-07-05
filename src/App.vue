@@ -1,7 +1,10 @@
 <template>
-
-    <Dropdown :items="items"/>
-     
+    
+    <div class="flex flex-row w-64 h-64 border shadow">
+        <Dropdown :items="items"/>
+    </div>
+    
+        
 </template>
 
 <script>

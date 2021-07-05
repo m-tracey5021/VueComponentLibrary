@@ -11,14 +11,6 @@
         @apply flex flex-col items-center;
     }
 
-    .dropdown-wrapper {
-        @apply h-0 p-0 mt-2 transition-height duration-200 overflow-hidden;
-    }
-
-    /* .dropdown {
-        @apply absolute p-0 mt-2 border rounded-sm shadow;
-    } */
-
     .dropdown {
         @apply border rounded-sm shadow;
     }
@@ -42,18 +34,11 @@
     .dropdown-submenu-toggle {
         @apply relative;
     }
-
-    /* .dropdown-submenu {
-        @apply absolute -top-px left-full ml-0.5 border rounded-sm shadow;
-    } */
-
-    .dropdown-submenu-wrapper {
-        @apply absolute h-0 -top-px left-full ml-0.5 transition-height duration-200 overflow-hidden;
-    }    
-
+    
     .dropdown-submenu {
-        @apply border rounded-sm shadow;
+        @apply absolute -top-px left-full ml-0.5 bg-white border rounded-sm shadow opacity-0 transition-opacity duration-100 ease-in;
     }
+
 
     
 }
