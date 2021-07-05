@@ -21,7 +21,7 @@
         <!-- <ul v-if="displayChildData" class="dropdown-submenu">
             <DropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.icon" :command="child.command" :children="child.children"/>
         </ul> -->
-        <ul v-bind:id="'dropdown-submenu-' + menuItemIdData" class="dropdown-submenu-with-fade">
+        <ul v-bind:id="'dropdown-submenu-' + menuItemIdData" class="dropdown-submenu">
             <DropdownItem v-for="(child, index) in childrenData" :key="child" :menuItemId="menuItemIdData + '-' + index" :label="child.label" :icon="child.icon" :command="child.command" :children="child.children"/>
         </ul>
     </li>  

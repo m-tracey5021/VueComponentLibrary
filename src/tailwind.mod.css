@@ -35,12 +35,12 @@
         @apply relative;
     }
 
-    .dropdown-submenu {
+    /* .dropdown-submenu {
         @apply absolute -top-px left-full ml-0.5 border rounded-sm shadow;
-    }
+    } */
     
-    .dropdown-submenu-with-fade {
-        @apply absolute -top-px left-full ml-0.5 border rounded-sm shadow opacity-0 transition-opacity duration-100 ease-in;
+    .dropdown-submenu {
+        @apply absolute -top-px left-full ml-0.5 bg-white border rounded-sm shadow opacity-0 transition-opacity duration-100 ease-in;
     }
 
 
